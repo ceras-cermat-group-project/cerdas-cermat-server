@@ -4,7 +4,7 @@ class Controller {
   static fetchQuiz(req, res, next) {
     Quiz.findAll({
       order: [
-        ['id', 'DESC']
+        ['id', 'ASC']
       ]
     })
       .then(data => {
