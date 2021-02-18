@@ -14,10 +14,11 @@ app.use(express.urlencoded({extended: true}))
 io.on('connection', (socket) => {
   console.log('a user connected');
 
-  // socket.on('userInput', (input, questionId) => {
-  //   // kasih kondisi pengecekan disini yang nerima param
-  //   socket.emit('serverResponse', (input, questionId))
-  // })
+  socket.on('testing', (data) => {
+    // handle logic scoring
+    console.log('event dari client', data);
+    socket.emit('testKeClient', data)
+  })
 })
 
 http.listen(port, () => {
