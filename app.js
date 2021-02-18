@@ -12,9 +12,14 @@ app.use(express.urlencoded({extended: true}))
 // app.use("/", router)
 
 io.on('connection', (socket) => {
-    console.log('a user connected');
+  console.log('a user connected');
+
+  // socket.on('userInput', (input, questionId) => {
+  //   // kasih kondisi pengecekan disini yang nerima param
+  //   socket.emit('serverResponse', (input, questionId))
+  // })
 })
 
 http.listen(port, () => {
-    console.log(`listening to port: ${port}`);
+  console.log(`listening to port: ${port}`);
 })
