@@ -12,23 +12,49 @@ module.exports = {
      * }], {});
     */
    return queryInterface.bulkInsert('Quizzes', [{
-       question: 'https://i.imgur.com/yZAGK5X.jpg',
-       answer: 'obama',
+       question: 'https://i.ibb.co/8mySRw1/bkqfHAk.jpg',
+       answer: 'edison',
        createdAt: new Date(),
        updatedAt: new Date(),
      },
      {
-      question: 'Pergi ke kota naik angkutan , Tidak lupa berkunjung ke balai kota, Punya sisik, tapi bukan ikan, Punya mahkota, tapi bukan raja - Jawaban : nanas',
-      answer: 'nanas',
+      question: 'https://i.ibb.co/phCytjT/oUA9EuU.jpg',
+      answer: 'obama',
+      createdAt: new Date(),
+       updatedAt: new Date(),
+    }
+    ,
+     {
+      question: 'https://i.ibb.co/mC7RNZ9/Rffoc1l.jpg',
+      answer: 'tukul',
       createdAt: new Date(),
        updatedAt: new Date(),
     },
     {
-      question: 'nama instructur yang tidak ngebreifing LC',
-      answer: 'rahasia',
-      createdAt: new Date(),
+     question: 'https://i.ibb.co/FzXX394/rRB6eDN.jpg',
+     answer: 'nanas',
+     createdAt: new Date(),
       updatedAt: new Date(),
-    }
+   },
+    {
+     question: 'https://i.ibb.co/GFdJP7K/soalcandiborobudur.jpg',
+     answer: 'gunadharma',
+     createdAt: new Date(),
+      updatedAt: new Date(),
+   },
+   {
+    question: 'https://i.ibb.co/80C5X8v/qwqwqwqwqw.jpg',
+    answer: '44',
+    createdAt: new Date(),
+     updatedAt: new Date(),
+  },
+  {
+   question: 'https://i.ibb.co/qmwN6C1/dfgdfgfdfgg.jpg',
+   answer: '49',
+   createdAt: new Date(),
+    updatedAt: new Date(),
+ }
+
   ], {});
   },
 

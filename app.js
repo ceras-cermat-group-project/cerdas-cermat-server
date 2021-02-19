@@ -12,18 +12,41 @@ app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use("/", router)
 
+let user = []
+
 io.on('connection', (socket) => {
   console.log('a user connected');
 
-  socket.on('inputUser', (data) => {
-    // handle logic scoring
-    Quiz.findOne({where: {id : data.quizId}})
+  socket.on('fetchQuiz', (data) => {
+    Quiz.findOne({where: {id : +data}})
     .then(quiz => {
-      if(quiz.answer === data.answer) {
+      io.emit('Quiz', quiz)
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  })
+
+  socket.on('login', (data) => {
+    user.push(data)
+  })
+
+  socket.on('inputUser', (payload) => {
+    Quiz.findOne({where: {id : payload.quizId}})
+    .then(quiz => {
+      if(quiz.answer === payload.answer) {
+        let quizId = payload.quizId + 1
         socket.emit('scoring', 10)
+        return Quiz.findOne({where: {id: quizId}})
       } else {
+        let quizId = payload.quizId + 1
+        console.log(quizId);
         socket.emit('scoring', -5)
+        return Quiz.findOne({where: {id: quizId}})
       }
+    })
+    .then(nextQuiz => {
+      io.emit('nextQuiz', nextQuiz)
     })
     .catch(err => {
       console.log(err)
