@@ -3,7 +3,6 @@
 - base url client (deploy): https://foxy-cerdas-cermat-client.web.app/login
 
 ## Endpoint List
----json
 
 ### Register
 
